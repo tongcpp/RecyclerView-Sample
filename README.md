@@ -1,4 +1,4 @@
 RecyclerView-Sample
 ===================
 
-A simple sample forRecyclerView
+A simple sample for RecyclerView
