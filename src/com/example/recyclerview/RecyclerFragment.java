@@ -25,6 +25,7 @@ public class RecyclerFragment extends Fragment {
 	public RecyclerFragment() {
 	}
 
+	// Another constructor function, enable to pass them arguments.
 	public static RecyclerFragment newInstance(String param1, String param2) {
 		RecyclerFragment fragment = new RecyclerFragment();
 		Bundle args = new Bundle();
@@ -61,7 +62,7 @@ public class RecyclerFragment extends Fragment {
 
 		LinearLayoutManager layoutManager = new LinearLayoutManager(
 				getActivity());
-		// layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+		 layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 		mRecyclerView.setLayoutManager(layoutManager);
 
 		String[] dataset = new String[100];

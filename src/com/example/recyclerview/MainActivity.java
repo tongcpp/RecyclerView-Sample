@@ -17,8 +17,10 @@ public class MainActivity extends Activity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		if (savedInstanceState == null) {
-			getFragmentManager().beginTransaction()
-					.add(R.id.container, new RecyclerFragment()).commit();
+			getFragmentManager()
+					.beginTransaction()
+					.add(R.id.container,
+							RecyclerFragment.newInstance(null, null)).commit();
 		}
 	}
 

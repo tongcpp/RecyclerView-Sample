@@ -21,9 +21,7 @@ public class RecyclerAdapter extends Adapter<RecyclerAdapter.ViewHolder> {
 		mContext = context;
 	}
 
-	// 是否使用static修饰
-	// 是 - 嵌套类 开销更小
-	// 否 - 内部类 可获取外部类非静态成员
+	// Not use static
 	public class ViewHolder extends RecyclerView.ViewHolder {
 
 		public TextView mTextView;
@@ -37,7 +35,7 @@ public class RecyclerAdapter extends Adapter<RecyclerAdapter.ViewHolder> {
 				public void onClick(View v) {
 					Toast.makeText(
 							mContext,
-							"点击 - " + getPosition() + " - "
+							"onItemClick - " + getPosition() + " - "
 									+ mTextView.getText().toString() + " - "
 									+ mDataset[getPosition()], 0).show();
 				}
@@ -57,14 +55,8 @@ public class RecyclerAdapter extends Adapter<RecyclerAdapter.ViewHolder> {
 
 	@Override
 	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		// View view = View.inflate(parent.getContext(),
-		// android.R.layout.simple_list_item_1, null);
-		// View view = View.inflate(mContext, R.layout.recycle_item, null);
-		LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-//				(LayoutInflater) mContext
-//				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View view = inflater.inflate(R.layout.recycle_item, parent, false);
-
+		View view = LayoutInflater.from(parent.getContext()).inflate(
+				R.layout.recycle_item, parent, false);
 		ViewHolder holder = new ViewHolder(view);
 		return holder;
 	}
